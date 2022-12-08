@@ -1,0 +1,40 @@
+{
+  "name": "dashboard",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^2.3.7",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@reduxjs/toolkit": "^1.9.1",
+    "@tremor/react": "^1.1.5",
+    "@types/luxon": "^3.1.0",
+    "@types/react-time-picker": "^4.0.2",
+    "chart.js": "^3.9.1",
+    "formik": "^2.2.9",
+    "framer-motion": "^7.6.4",
+    "luxon": "^3.1.1",
+    "react": "^18.2.0",
+    "react-chartjs-2": "^4.3.1",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.6.0",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.4.3",
+    "react-time-picker": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.22",
+    "@types/react-dom": "^18.0.7",
+    "@typescript-eslint/eslint-plugin": "^5.44.0",
+    "@vitejs/plugin-react": "^2.2.0",
+    "eslint": "^8.28.0",
+    "typescript": "^4.6.4",
+    "vite": "^3.2.0"
+  }
+}
