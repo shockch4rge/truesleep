@@ -22,13 +22,6 @@ const api = createApi({
 
     endpoints: b => ({
         // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
-        setAlarm: b.mutation<void, void>({
-            query: () => ({
-                url: "/set-alarm"
-            })
-        }),
-
-        // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
         test: b.query<any, void>({
             query: () => ({
                 url: "/test",
@@ -60,6 +53,18 @@ const api = createApi({
                 url: `/users/${id}`,
             }),
         }),
+
+        // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
+        setAlarm: b.mutation<void, { userId: string; startTime: number; wakeUpTime: number }>({
+            query: ({ userId, startTime, wakeUpTime}) => ({
+                url: `/users/${userId}/set-alarm`,
+                method: "put",
+                body: {
+                    startTime,
+                    wakeUpTime,
+                }
+            })
+        })
     }),
 });
 
