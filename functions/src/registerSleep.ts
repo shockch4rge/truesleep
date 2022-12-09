@@ -3,12 +3,14 @@ import { DynamoDBDocumentClient, PutCommand, UpdateCommand } from "@aws-sdk/lib-
 
 const db = DynamoDBDocumentClient.from(new DynamoDBClient({}), {});
 
-export const handler = async () => {
+export const handler = async (event: any) => {
     await db.send(new PutCommand({
         TableName: "Sleep",
         Item: {
-            sleep_userId: "sleep_user1",
-        },
+            sleep_userId: `sleep_user1`,
+            startedAt: event.startTime,
+            endedAt: Date.now(),
+        }
     }))
 
     await db.send(new UpdateCommand({
