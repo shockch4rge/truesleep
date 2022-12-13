@@ -1,5 +1,6 @@
 import "@tremor/react/dist/esm/tremor.css";
 import "./theme/index.css";
+import "dotenv/config";
 
 import React from "react";
 import ReactDOM from "react-dom/client";

@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-import auth from "../auth.json";
+// import auth from "../auth.json";
 import { RootState } from "./store";
 import { SleepDetails } from "./types";
 
@@ -14,10 +14,15 @@ const api = createApi({
     reducerPath: "api",
 
     baseQuery: fetchBaseQuery({
-        baseUrl: auth.AWS_ENDPOINT,
+        baseUrl: process.env.API_ENDPOINT,
         headers: {
-            "X-Api-Key": auth.API_KEY,
-        }
+            "X-Api-Key": process.env.API_KEY,
+        },
+
+        // baseUrl: auth.API_ENDPOINT,
+        // headers: {
+        //     "X-Api-Key": auth.API_KEY,
+        // }
     }),
 
     endpoints: b => ({
